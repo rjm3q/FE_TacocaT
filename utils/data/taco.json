@@ -1,0 +1,10 @@
+{
+  "uid": "12345",
+  "shopName": "Example Shop",
+  "user": "John Doe",
+  "type": "Critic",
+  "address": "123 Main Street, City, Country",
+  "category": "Film",
+  "lat": 12.3456,
+  "long": 78.9012
+}
