@@ -1,8 +1,29 @@
 {
-  "uid": "98765",
-  "desc": "Delicious and flavorful taco with a perfect balance of spices and toppings.",
-  "user": "Jane Smith",
-  "createdDate": "2023-05-30",
-  "taco_id": "TACO001",
-  "rating": 4.5
+  "-NWu3Gq83tE_9Csbi7Va": {
+    "createdDate": "",
+    "criticName": "Jane Smith",
+    "desc": "Delicious and flavorful taco with a perfect balance of spices and toppings.",
+    "firebaseKey": "-NWu3Gq83tE_9Csbi7Va",
+    "rating": 4.5,
+    "taco_id": "-NWu3lQCFF9qU9tcK7mc",
+    "uid": "AUJye1mA4uPVAcWI4wH9ZsjL6AD3"
+  },
+  "-NWu5Xa6GWnexC-nmiM3": {
+    "createdDate": "",
+    "criticName": "Jane Smif",
+    "desc": "Best I ever Had.",
+    "firebaseKey": "-NWu5Xa6GWnexC-nmiM3",
+    "rating": 5,
+    "taco_id": "-NWu6xtL-Smzj_rAApdI",
+    "uid": "AUJye1mA4uPVAcWI4wH9ZsjL6AD3"
+  },
+  "-NWu5o1mWSUEseHx57NU": {
+    "createdDate": "",
+    "criticName": "Jeff Albertson",
+    "desc": "Worst.Taco.Ever.",
+    "firebaseKey": "-NWu5o1mWSUEseHx57NU",
+    "rating": 0,
+    "taco_id": "-NWu7eLAWkN3zkXGXPT6",
+    "uid": "AUJye1mA4uPVAcWI4wH9ZsjL6AD3"
+  }
 }

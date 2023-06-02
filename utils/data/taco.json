@@ -1,10 +1,35 @@
 {
-  "uid": "12345",
-  "shopName": "Example Shop",
-  "user": "John Doe",
-  "type": "Critic",
-  "address": "123 Main Street, City, Country",
-  "category": "Film",
-  "lat": 12.3456,
-  "long": 78.9012
+  "-NWu3lQCFF9qU9tcK7mc": {
+    "address": "Street, City, Zip",
+    "category": "",
+    "firebaseKey": "-NWu3lQCFF9qU9tcK7mc",
+    "lat": 12.3456,
+    "long": 78.9012,
+    "ownerName": "John Doe",
+    "shopName": "Taco Bout It",
+    "type": "",
+    "uid": "AUJye1mA4uPVAcWI4wH9ZsjL6AD3"
+  },
+  "-NWu6xtL-Smzj_rAApdI": {
+    "address": "Street, City, Zip",
+    "category": "",
+    "firebaseKey": "-NWu6xtL-Smzj_rAApdI",
+    "lat": 78.9012,
+    "long": 12.3456,
+    "ownerName": "Jose Dose",
+    "shopName": "Ta Cozy Mels",
+    "type": "",
+    "uid": "AUJye1mA4uPVAcWI4wH9ZsjL6AD3"
+  },
+  "-NWu7eLAWkN3zkXGXPT6": {
+    "address": "Street, City, Zip",
+    "category": "",
+    "firebaseKey": "-NWu7eLAWkN3zkXGXPT6",
+    "lat": 13.4679,
+    "long": 85.2013,
+    "ownerName": "Billy Dee Williams",
+    "shopName": "Taco Me at Wounded Knee",
+    "type": "",
+    "uid": "AUJye1mA4uPVAcWI4wH9ZsjL6AD3"
+  }
 }
