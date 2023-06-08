@@ -8,7 +8,11 @@ import { useAuth } from '../../utils/context/authContext';
 import { createCritic, updateCritic } from '../../api/criticData';
 
 const initialState = {
-
+  criticName: '',
+  desc: '',
+  taco_id: '',
+  createdDate: '',
+  rating: '',
 };
 
 function CriticForm({ obj }) {
@@ -45,35 +49,30 @@ function CriticForm({ obj }) {
   };
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'} Project Board</h2>
+      <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'}Taco Review</h2>
 
       {/* TITLE INPUT  */}
-      <FloatingLabel controlId="floatingInput1" label="Enter Project Board Name" className="mb-3">
+      <FloatingLabel controlId="floatingInput1" label="Enter Critic Name" className="mb-3">
         <Form.Control
           type="text"
-          placeholder="Project Board Title"
-          name="boardTitle"
-          value={formInput.boardTitle}
+          placeholder="fname, lname"
+          name="criticName"
+          value={formInput.criticName}
           onChange={handleChange}
           required
         />
       </FloatingLabel>
 
-      {/* A WAY TO HANDLE UPDATES FOR TOGGLES, RADIOS, ETC  */}
-      <Form.Check
-        className="text-white mb-3"
-        type="switch"
-        id="favorite"
-        name="favorite"
-        label="Favorite?"
-        checked={formInput.favorite}
-        onChange={(e) => {
-          setFormInput((prevState) => ({
-            ...prevState,
-            favorite: e.target.checked,
-          }));
-        }}
-      />
+      <FloatingLabel controlId="floatingInput2" label="Taco Review" className="mb-3">
+        <Form.Control
+          type="text"
+          placeholder="How was your taco"
+          name="desc"
+          value={formInput.desc}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
 
       {/* <FloatingLabel controlId="floatingSelect" label="Team">
         <Form.Select
@@ -98,18 +97,35 @@ function CriticForm({ obj }) {
         </Form.Select>
       </FloatingLabel> */}
 
+      {/* A WAY TO HANDLE UPDATES FOR TOGGLES, RADIOS, ETC */}
+      {/* <Form.Check
+        className="text-white mb-3"
+        type="switch"
+        id="favorite"
+        name="favorite"
+        label="Favorite?"
+        checked={formInput.favorite}
+        onChange={(e) => {
+          setFormInput((prevState) => ({
+            ...prevState,
+            favorite: e.target.checked,
+          }));
+        }}
+      /> */}
+
       {/* SUBMIT BUTTON  */}
-      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Board</Button>
+      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Submit Review</Button>
     </Form>
   );
 }
 // update proptypes from critic json
 CriticForm.propTypes = {
   obj: PropTypes.shape({
-    boardTitle: PropTypes.string,
-    card: PropTypes.string,
-    favorite: PropTypes.bool,
-    members: PropTypes.string,
+    criticName: PropTypes.string,
+    desc: PropTypes.string,
+    taco_id: PropTypes.string,
+    createdDate: PropTypes.instanceOf(Date),
+    rating: PropTypes.number,
     firebaseKey: PropTypes.string,
   }),
 };
