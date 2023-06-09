@@ -13,7 +13,7 @@ const initialState = {
   lat: '',
   long: '',
   ownerName: '',
-  shopeName: '',
+  shopName: '',
 };
 function FoodForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
@@ -89,7 +89,6 @@ function FoodForm({ obj }) {
     </Form>
   );
 }
-
 FoodForm.propTypes = {
   obj: PropTypes.shape({
     address: PropTypes.string,
@@ -97,7 +96,7 @@ FoodForm.propTypes = {
     lat: PropTypes.number,
     long: PropTypes.number,
     ownerName: PropTypes.string,
-    shopeName: PropTypes.string,
+    shopName: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
 };
