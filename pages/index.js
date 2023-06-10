@@ -1,11 +1,22 @@
-// import { Button } from 'react-bootstrap'; // TODO: COMMENT IN FOR AUTH
-// import { signOut } from '../utils/auth'; // TODO: COMMENT IN FOR AUTH
-// import { useAuth } from '../utils/context/authContext'; // TODO: COMMENT IN FOR AUTH
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { Button } from 'react-bootstrap'; // TODO: COMMENT IN FOR AUTH
+import { useAuth } from '../utils/context/authContext'; // TODO: COMMENT IN FOR AUTH
+import { getTacos } from '../api/tacoData';
+import BigFoodCard from '../components/BigFoodCard';
 
 function Home() {
-  // const { user } = useAuth(); // TODO: COMMENT IN FOR AUTH
+  const [cards, setCards] = useState([]);
+  const { user } = useAuth();
 
-  const user = { displayName: 'Dr. T' }; // TODO: COMMENT OUT FOR AUTH
+  const getAllCards = () => {
+    getTacos(user.uid).then(setCards);
+  };
+
+  useEffect(() => {
+    getAllCards();
+  }, []);
+
   return (
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
@@ -16,7 +27,16 @@ function Home() {
         margin: '0 auto',
       }}
     >
+
       <h1>Hello {user.displayName}! </h1>
+      <Link href="/board/newBoard" passHref>
+        <Button>Create a Project</Button>
+      </Link>
+      <div className="d-flex flex-wrap">
+        {cards.map((card) => (
+          <BigFoodCard key={card.firebaseKey} cardObj={card} onUpdate={getTacos} />
+        ))}
+      </div>
     </div>
   );
 }
