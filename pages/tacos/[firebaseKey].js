@@ -35,11 +35,6 @@ export default function ViewFood() {
       <Link href="/tacos/newTaco" passHref>
         <Button variant="primary">Add Food Place</Button>
       </Link>
-      {/* <div className="d-flex flex-wrap">
-        {tasks.map((task) => (
-          <TaskCard key={task.firebaseKey} taskObj={task} onUpdate={getListTasks} />
-        ))}
-      </div> */}
     </>
   );
 }
