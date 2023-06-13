@@ -16,7 +16,7 @@ function BigFoodCard({ foodObj, onUpdate }) {
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
-        <Card.Title>{foodObj.taco_id.ShopName}</Card.Title>
+        <Card.Title>TITLE</Card.Title>
         <p className="card-text bold">{foodObj.criticName}</p>
         <p className="card-text bold">{foodObj.desc}</p>
         <p className="card-text bold">{foodObj.rating}</p>
