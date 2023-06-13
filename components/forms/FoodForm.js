@@ -53,7 +53,7 @@ function FoodForm({ obj }) {
         <Form.Control
           type="text"
           placeholder="Name of Taco Dispensary"
-          name="dshopName"
+          name="shopName"
           value={formInput.shopName}
           onChange={handleChange}
           required

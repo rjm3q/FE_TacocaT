@@ -16,7 +16,7 @@ function BigFoodCard({ foodObj, onUpdate }) {
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
-        <Card.Title>{foodObj.shopName}</Card.Title>
+        <Card.Title>{}</Card.Title>
         <p className="card-text bold">{foodObj.ownerName}</p>
         <p className="card-text bold">{foodObj.address}</p>
         <Link href={`/board/${foodObj.firebaseKey}`} passHref>

@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap'; // TODO: COMMENT IN FOR AUTH
 import { useAuth } from '../utils/context/authContext'; // TODO: COMMENT IN FOR AUTH
 import { getTacos } from '../api/tacoData';
 import BigFoodCard from '../components/BigFoodCard';
+import LilFoodCard from '../components/LilFoodCard';
 
 function Home() {
   const [cards, setCards] = useState([]);
@@ -29,12 +30,21 @@ function Home() {
     >
 
       <h1>Hello {user.displayName}! </h1>
-      <Link href="/board/newBoard" passHref>
-        <Button>Create a Project</Button>
+      <Link href="/critics/newCritic" passHref>
+        <Button>Create a Critic</Button>
       </Link>
+      <Link href="/tacos/newTaco" passHref>
+        <Button>Create a Taco</Button>
+      </Link>
+
       <div className="d-flex flex-wrap">
         {cards.map((card) => (
-          <BigFoodCard key={card.firebaseKey} cardObj={card} onUpdate={getTacos} />
+          <BigFoodCard key={card.firebaseKey} foodObj={card} onUpdate={getTacos} />
+        ))}
+      </div>
+      <div className="d-flex flex-wrap">
+        {cards.map((card) => (
+          <LilFoodCard key={card.firebaseKey} foodObj={card} onUpdate={getTacos} />
         ))}
       </div>
     </div>
