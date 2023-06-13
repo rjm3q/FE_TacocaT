@@ -29,9 +29,13 @@ function Home() {
     >
 
       <h1>Hello {user.displayName}! </h1>
-      <Link href="/board/newBoard" passHref>
-        <Button>Create a Project</Button>
+      <Link href="/critics/newCritic" passHref>
+        <Button>Create a Critic</Button>
       </Link>
+      <Link href="/tacos/newTaco" passHref>
+        <Button>Create a Taco</Button>
+      </Link>
+
       <div className="d-flex flex-wrap">
         {cards.map((card) => (
           <BigFoodCard key={card.firebaseKey} cardObj={card} onUpdate={getTacos} />
