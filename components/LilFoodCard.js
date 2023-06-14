@@ -3,27 +3,27 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
-import { deleteSingleCritic } from '../api/criticData';
+import { deleteSingleTaco } from '../api/tacoData';
 
-function BigFoodCard({ foodObj, onUpdate }) {
+function LilFoodCard({ foodObj, onUpdate }) {
   const deleteThisCard = () => {
     // check foodObj.name
-    if (window.confirm(`Delete ${foodObj.criticName}?`)) {
-      deleteSingleCritic(foodObj.firebaseKey).then(() => onUpdate());
+    if (window.confirm(`Delete ${foodObj.shopName}?`)) {
+      deleteSingleTaco(foodObj.firebaseKey).then(() => onUpdate());
     }
   };
 
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
-        <Card.Title>TITLE</Card.Title>
-        <p className="card-text bold">{foodObj.criticName}</p>
-        <p className="card-text bold">{foodObj.desc}</p>
-        <p className="card-text bold">{foodObj.rating}</p>
-        <Link href={`/board/${foodObj.firebaseKey}`} passHref>
+        <Card.Title>{foodObj.shopName}</Card.Title>
+        <p className="card-text bold">{foodObj.ownerName}</p>
+        <p className="card-text bold">{foodObj.type}</p>
+        <p className="card-text bold">{foodObj.address}</p>
+        <Link href={`/tacos/${foodObj.firebaseKey}`} passHref>
           <Button variant="success" className="m-2">VIEW</Button>
         </Link>
-        <Link href={`/board/edit/${foodObj.firebaseKey}`} passHref>
+        <Link href={`/tacos/edit/${foodObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisCard} className="m-2">
@@ -34,16 +34,18 @@ function BigFoodCard({ foodObj, onUpdate }) {
   );
 }
 
-BigFoodCard.propTypes = {
+LilFoodCard.propTypes = {
   foodObj: PropTypes.shape({
-    criticName: PropTypes.string,
-    desc: PropTypes.string,
-    taco_id: PropTypes.string,
-    createdDate: PropTypes.instanceOf(Date),
-    rating: PropTypes.number,
+    address: PropTypes.string,
+    category: PropTypes.string,
+    type: PropTypes.string,
+    lat: PropTypes.number,
+    long: PropTypes.number,
+    ownerName: PropTypes.string,
+    shopName: PropTypes.string,
     firebaseKey: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
 
-export default BigFoodCard;
+export default LilFoodCard;

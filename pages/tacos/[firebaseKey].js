@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
-import viewCriticDetails from '../../api/mergeData';
+import { viewTacoDetails } from '../../api/mergeData';
+
 // import { viewListDetails } from '../../api/mergedData';
 // import { getListTasks } from '../../api/taskData';
 // import TaskCard from '../../components/TaskCard';
@@ -15,7 +16,7 @@ export default function ViewFood() {
 
   // change to viewTacoDetails later
   useEffect(() => {
-    viewCriticDetails(firebaseKey).then(setFoodDetails);
+    viewTacoDetails(firebaseKey).then(setFoodDetails);
   }, [firebaseKey]);
 
   return (

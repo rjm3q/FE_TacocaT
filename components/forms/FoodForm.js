@@ -10,6 +10,7 @@ import { createTaco, updateTaco } from '../../api/tacoData';
 const initialState = {
   address: '',
   category: '',
+  type: '',
   lat: '',
   long: '',
   ownerName: '',
@@ -40,7 +41,7 @@ function FoodForm({ obj }) {
     } else {
       const payload = { ...formInput, uid: user.uid };
       createTaco(payload).then(() => {
-        router.push(`/taco/${obj.firebaseKey}`);
+        router.push('/');
       });
     }
   };
@@ -63,38 +64,41 @@ function FoodForm({ obj }) {
         <Form.Control
           type="text"
           placeholder="Name of Head Taco Person"
-          name="shopName"
+          name="ownerName"
           value={formInput.ownerName}
           onChange={handleChange}
           required
         />
       </FloatingLabel>
+      {/* need to make this a multi input area */}
       <FloatingLabel controlId="floatingInput1" label="address-street" className="mb-3">
         <Form.Control
           type="text"
-          placeholder="Name of Taco Dispensary"
-          name="shopName"
-          value={formInput.shopName}
+          placeholder="Location of Taco Dispensary"
+          name="address"
+          value={formInput.address}
           onChange={handleChange}
           required
         />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingInput1" label="Taco Shop Name" className="mb-3">
+      {/* type of restaraunt like japanese, itilain, mexican, etc */}
+      {/* <FloatingLabel controlId="floatingInput1" label="Taco Shop Name" className="mb-3">
         <Form.Control
           type="text"
           placeholder="Name of Taco Dispensary"
-          name="shopName"
-          value={formInput.shopName}
+          name="category"
+          value={formInput.category}
           onChange={handleChange}
           required
         />
-      </FloatingLabel>
-      <FloatingLabel controlId="floatingInput1" label="Taco Shop Name" className="mb-3">
+      </FloatingLabel> */}
+      {/* change to drop down list */}
+      <FloatingLabel controlId="floatingInput1" label="Street food/ Dine in / Authentic" className="mb-3">
         <Form.Control
           type="text"
-          placeholder="Name of Taco Dispensary"
-          name="shopName"
-          value={formInput.shopName}
+          placeholder="Street food/ Dine in / Authentic"
+          name="type"
+          value={formInput.type}
           onChange={handleChange}
           required
         />
@@ -125,7 +129,7 @@ function FoodForm({ obj }) {
       </FloatingLabel> */}
 
       {/* SUBMIT BUTTON  */}
-      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Post Taco Place</Button>
+      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Submit Taco Place</Button>
     </Form>
   );
 }
@@ -133,6 +137,7 @@ FoodForm.propTypes = {
   obj: PropTypes.shape({
     address: PropTypes.string,
     category: PropTypes.string,
+    type: PropTypes.string,
     lat: PropTypes.number,
     long: PropTypes.number,
     ownerName: PropTypes.string,
