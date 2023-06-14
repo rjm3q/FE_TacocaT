@@ -59,6 +59,46 @@ function FoodForm({ obj }) {
           required
         />
       </FloatingLabel>
+      <FloatingLabel controlId="floatingInput2" label="Owner Name" className="mb-3">
+        <Form.Control
+          type="text"
+          placeholder="Name of Head Taco Person"
+          name="shopName"
+          value={formInput.ownerName}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
+      <FloatingLabel controlId="floatingInput1" label="address-street" className="mb-3">
+        <Form.Control
+          type="text"
+          placeholder="Name of Taco Dispensary"
+          name="shopName"
+          value={formInput.shopName}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
+      <FloatingLabel controlId="floatingInput1" label="Taco Shop Name" className="mb-3">
+        <Form.Control
+          type="text"
+          placeholder="Name of Taco Dispensary"
+          name="shopName"
+          value={formInput.shopName}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
+      <FloatingLabel controlId="floatingInput1" label="Taco Shop Name" className="mb-3">
+        <Form.Control
+          type="text"
+          placeholder="Name of Taco Dispensary"
+          name="shopName"
+          value={formInput.shopName}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
 
       {/* LIST SELECT  */}
       {/* <FloatingLabel controlId="floatingSelect" label="List">
