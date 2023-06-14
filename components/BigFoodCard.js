@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
-import { deleteSingleTaco } from '../api/tacoData';
+import { deleteSingleCritic } from '../api/criticData';
 
 function BigFoodCard({ foodObj, onUpdate }) {
   const deleteThisCard = () => {
     // check foodObj.name
-    if (window.confirm(`Delete ${foodObj.shopName}?`)) {
-      deleteSingleTaco(foodObj.firebaseKey).then(() => onUpdate());
+    if (window.confirm(`Delete ${foodObj.criticName}?`)) {
+      deleteSingleCritic(foodObj.firebaseKey).then(() => onUpdate());
     }
   };
 
@@ -17,12 +17,14 @@ function BigFoodCard({ foodObj, onUpdate }) {
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
         <Card.Title>{}</Card.Title>
-        <p className="card-text bold">{foodObj.ownerName}</p>
-        <p className="card-text bold">{foodObj.address}</p>
-        <Link href={`/board/${foodObj.firebaseKey}`} passHref>
+        <p className="card-text bold">{foodObj.criticName}</p>
+        <p className="card-text bold">{foodObj.desc}</p>
+        <p className="card-text bold">{foodObj.createdDate}</p>
+        <p className="card-text bold">{foodObj.rating}</p>
+        <Link href={`/critics/${foodObj.firebaseKey}`} passHref>
           <Button variant="success" className="m-2">VIEW</Button>
         </Link>
-        <Link href={`/board/edit/${foodObj.firebaseKey}`} passHref>
+        <Link href={`/critics/edit/${foodObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisCard} className="m-2">
@@ -35,12 +37,11 @@ function BigFoodCard({ foodObj, onUpdate }) {
 
 BigFoodCard.propTypes = {
   foodObj: PropTypes.shape({
-    shopName: PropTypes.string,
-    address: PropTypes.string,
-    category: PropTypes.string,
-    lat: PropTypes.number,
-    long: PropTypes.number,
-    ownerName: PropTypes.string,
+    criticName: PropTypes.string,
+    desc: PropTypes.string,
+    taco_id: PropTypes.string,
+    createdDate: PropTypes.instanceOf(Date),
+    rating: PropTypes.number,
     firebaseKey: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
