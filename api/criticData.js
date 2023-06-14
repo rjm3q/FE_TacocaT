@@ -84,6 +84,18 @@ const updateCritic = (payload) => new Promise((resolve, reject) => {
     })
     .catch(reject);
 });
+// define ITEMID
+const getTacoCritic = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/taco.json?orderBy="ITEM_ID"&equalTo="${firebaseKey}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
 
 export {
   getCritics,
@@ -91,4 +103,5 @@ export {
   getSingleCritic,
   deleteSingleCritic,
   updateCritic,
+  getTacoCritic,
 };

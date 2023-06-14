@@ -129,7 +129,7 @@ function FoodForm({ obj }) {
       </FloatingLabel> */}
 
       {/* SUBMIT BUTTON  */}
-      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Post Taco Place</Button>
+      <Button type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Submit Taco Place</Button>
     </Form>
   );
 }

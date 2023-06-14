@@ -11,14 +11,21 @@ const viewCriticDetails = (criticFirebaseKey) => new Promise((resolve, reject) =
     }).catch((error) => reject(error));
 });
 
-// const viewTacoDetails = (listFirebaseKey) => new Promise((resolve, reject) => {
-//   getSingleList(listFirebaseKey)
-//     .then((listObject) => {
-//       getSingleList(listObject.board_id)
-//         .then((boardObject) => {
-//           resolve({ boardObject, ...listObject });
-//         });
+const viewTacoDetails = (tacoFirebaseKey) => new Promise((resolve, reject) => {
+  getSingleTaco(tacoFirebaseKey)
+    .then((tacoObject) => {
+      getSingleTaco(tacoObject)
+        .then((criticObject) => {
+          resolve({ criticObject, ...tacoObject });
+        });
+    }).catch((error) => reject(error));
+});
+
+// const viewTacoDetails = (tacoFirebaseKey) => new Promise((resolve, reject) => {
+//   Promise.all([getSingleTaco(tacoFirebaseKey), getTacoCritic(profileFirebaseKey)])
+//     .then(([profileObject, profileExpenseArray]) => {
+//       resolve({ ...profileObject, expense: profileExpenseArray });
 //     }).catch((error) => reject(error));
 // });
 
-export default viewCriticDetails;
+export { viewTacoDetails, viewCriticDetails };
