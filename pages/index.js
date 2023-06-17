@@ -1,32 +1,27 @@
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap'; // TODO: COMMENT IN FOR AUTH
 import { useAuth } from '../utils/context/authContext'; // TODO: COMMENT IN FOR AUTH
-// import { getTacos } from '../api/tacoData';
+import { getTacos } from '../api/tacoData';
+import LilFoodCard from '../components/LilFoodCard';
 // import BigFoodCard from '../components/BigFoodCard';
 // import LilFoodCard from '../components/LilFoodCard';
 
 function Home() {
-  // const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([]);
   const { user } = useAuth();
 
-  // const getAllCards = () => {
-  //   getTacos(user.uid).then(setCards);
-  // };
+  const getAllCards = () => {
+    getTacos(user.uid).then(setCards);
+  };
 
-  // useEffect(() => {
-  //   getAllCards();
-  // }, []);
+  useEffect(() => {
+    getAllCards();
+  }, []);
 
   return (
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
-      style={{
-        height: '90vh',
-        padding: '30px',
-        maxWidth: '400px',
-        margin: '0 auto',
-      }}
     >
 
       <h1>Hello {user.displayName}! </h1>
@@ -36,6 +31,11 @@ function Home() {
       <Link href="/tacos/newTaco" passHref>
         <Button>Create a Taco</Button>
       </Link>
+      <div className="d-flex flex-wrap">
+        {cards.map((lilTaco) => (
+          <LilFoodCard key={lilTaco.firebaseKey} foodObj={lilTaco} onUpdate={getAllCards} />
+        ))}
+      </div>
 
     </div>
   );

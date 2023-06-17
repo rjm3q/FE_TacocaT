@@ -21,15 +21,6 @@ function Home() {
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
     >
-
-      {/* <h1>Hello {user.displayName}! </h1>
-      <Link href="/critics/newCritic" passHref>
-        <Button>Create a Critic</Button>
-      </Link>
-      <Link href="/tacos/newTaco" passHref>
-        <Button>Create a Taco</Button>
-      </Link> */}
-
       <div className="d-flex flex-wrap">
         {cards.map((card) => (
           <LilFoodCard key={card.firebaseKey} foodObj={card} onUpdate={getTacos} />
