@@ -4,10 +4,6 @@ import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import { viewTacoDetails } from '../../api/mergeData';
 
-// import { viewListDetails } from '../../api/mergedData';
-// import { getListTasks } from '../../api/taskData';
-// import TaskCard from '../../components/TaskCard';
-
 export default function ViewFood() {
   const [foodDetails, setFoodDetails] = useState({});
   const router = useRouter();
@@ -33,8 +29,8 @@ export default function ViewFood() {
         </div>
       </div>
       <br />
-      <Link href="/tacos/newTaco" passHref>
-        <Button variant="primary">Add Food Place</Button>
+      <Link href="../" passHref>
+        <Button variant="primary">Return to previous</Button>
       </Link>
     </>
   );

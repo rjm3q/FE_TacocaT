@@ -25,10 +25,10 @@ function CriticForm({ obj }) {
   }, [obj, user]);
 
   const handleChange = (e) => {
-    const { criticName, value } = e.target;
+    const { name, value } = e.target;
     setFormInput((prevState) => ({
       ...prevState,
-      [criticName]: value,
+      [name]: value,
     }));
   };
 
@@ -55,7 +55,7 @@ function CriticForm({ obj }) {
           type="text"
           placeholder="fname, lname"
           name="criticName"
-          defaultValue={formInput.criticName}
+          value={formInput.criticName}
           onChange={handleChange}
           required
         />
@@ -67,7 +67,7 @@ function CriticForm({ obj }) {
           style={{ height: '150px' }}
           placeholder="How was your taco"
           name="desc"
-          defaultValue={formInput.desc}
+          value={formInput.desc}
           onChange={handleChange}
           required
         />
@@ -80,7 +80,7 @@ function CriticForm({ obj }) {
           type="number"
           placeholder="rate your taco"
           name="rating"
-          defaultValue={formInput.rating}
+          value={formInput.rating}
           onChange={handleChange}
           required
         />
@@ -136,7 +136,7 @@ CriticForm.propTypes = {
     criticName: PropTypes.string,
     desc: PropTypes.string,
     taco_id: PropTypes.string,
-    createdDate: PropTypes.instanceOf(Date),
+    createdDate: PropTypes.string,
     rating: PropTypes.number,
     firebaseKey: PropTypes.string,
   }),
