@@ -23,7 +23,7 @@ function Home() {
     >
       <div className="d-flex flex-wrap">
         {cards.map((card) => (
-          <BigFoodCard key={card.firebaseKey} foodObj={card} onUpdate={getAllCards} />
+          <BigFoodCard key={card.firebaseKey} foodObj={card} onUpdate={getCritics} />
         ))}
       </div>
     </div>
