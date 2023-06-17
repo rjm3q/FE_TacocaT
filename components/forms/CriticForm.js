@@ -47,6 +47,7 @@ function CriticForm({ obj }) {
       });
     }
   };
+
   return (
     <Form onSubmit={handleSubmit}>
       <h2 className="text-white mt-5">{obj.firebaseKey ? 'Update' : 'Create'}Taco Review</h2>
@@ -63,9 +64,10 @@ function CriticForm({ obj }) {
         />
       </FloatingLabel>
 
-      <FloatingLabel controlId="floatingInput2" label="Taco Review" className="mb-3">
+      <FloatingLabel controlId="floatingTextarea" label="Taco Review" className="mb-3">
         <Form.Control
-          type="text"
+          as="textarea"
+          style={{ height: '150px' }}
           placeholder="How was your taco"
           name="desc"
           value={formInput.desc}
