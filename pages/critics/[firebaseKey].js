@@ -21,9 +21,10 @@ export default function ViewCritic() {
         <div className="d-flex flex-column text-black mt-5 details">
           <h2>
             {/* change passthru calls to taco versions */}
-            {criticDetails.shopeName}
-            {criticDetails.ownerName}
-            {criticDetails.category}
+            {criticDetails.criticName}
+            {criticDetails.desc}
+            {criticDetails.rating}
+            {criticDetails.createdDate}
           </h2>
         </div>
       </div>
