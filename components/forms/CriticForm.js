@@ -39,11 +39,8 @@ function CriticForm({ obj }) {
         .then(() => router.push(`/critic/${obj.firebaseKey}`));
     } else {
       const payload = { ...formInput, uid: user.uid };
-      createCritic(payload).then(({ criticName }) => {
-        const patchPayload = { firebaseKey: criticName };
-        updateCritic(patchPayload).then(() => {
-          router.push('/');
-        });
+      createCritic(payload).then(() => {
+        router.push('/');
       });
     }
   };
@@ -58,7 +55,7 @@ function CriticForm({ obj }) {
           type="text"
           placeholder="fname, lname"
           name="criticName"
-          value={formInput.criticName}
+          defaultValue={formInput.criticName}
           onChange={handleChange}
           required
         />
@@ -70,7 +67,7 @@ function CriticForm({ obj }) {
           style={{ height: '150px' }}
           placeholder="How was your taco"
           name="desc"
-          value={formInput.desc}
+          defaultValue={formInput.desc}
           onChange={handleChange}
           required
         />

@@ -103,6 +103,54 @@ function FoodForm({ obj }) {
           required
         />
       </FloatingLabel>
+      {/* form section for later address collection ...import InputGroup */}
+      {/* <InputGroup className="mb-3">
+        <InputGroup.Text id="basic-addon1">{IconTaco}</InputGroup.Text>
+        <Form.Control
+          type="text"
+          placeholder="Street Address"
+          name="address"
+          value={formInput.address}
+          onChange={handleChange}
+          required
+        />
+      </InputGroup>
+
+      <InputGroup className="mb-3">
+        <InputGroup.Text id="basic-addon1"> </InputGroup.Text>
+        <Form.Control
+          type="text"
+          placeholder="City"
+          name="cty"
+          value={formInput.city}
+          onChange={handleChange}
+          required
+        />
+      </InputGroup>
+
+      <InputGroup className="mb-3">
+        <InputGroup.Text> </InputGroup.Text>
+        <Form.Control
+          type="text"
+          placeholder="State"
+          name="state"
+          value={formInput.state}
+          onChange={handleChange}
+          required
+        />
+      </InputGroup>
+
+      <InputGroup className="mb-3">
+        <InputGroup.Text> </InputGroup.Text>
+        <Form.Control
+          type="text"
+          placeholder="Zip Code"
+          name="zip"
+          value={formInput.zip}
+          onChange={handleChange}
+          required
+        />
+      </InputGroup> */}
 
       {/* LIST SELECT  */}
       {/* <FloatingLabel controlId="floatingSelect" label="List">
