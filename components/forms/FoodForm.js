@@ -92,6 +92,7 @@ function FoodForm({ obj }) {
           required
         />
       </FloatingLabel> */}
+
       {/* change to drop down list */}
       <FloatingLabel controlId="floatingInput1" label="Street food/ Dine in / Authentic" className="mb-3">
         <Form.Control
@@ -103,6 +104,24 @@ function FoodForm({ obj }) {
           required
         />
       </FloatingLabel>
+      {/* dropdown form selctors for type and catgory */}
+      {/* <Form.Select aria-label="Type of Place">
+        <option>Choose a type of place</option>
+        <option value="Street Food">One</option>
+        <option value="Authentic">Two</option>
+        <option value="Dine In">Three</option>
+      </Form.Select>
+
+      <Form.Select aria-label="Category of Place">
+        <option>Choose a categoryof food</option>
+        <option value="Street Food">One</option>
+        <option value="Authentic">Two</option>
+        <option value="Dine In">Three</option>
+        <option value="Dine In">Three</option>
+        <option value="Dine In">Three</option>
+        <option value="Dine In">Three</option>
+      </Form.Select> */}
+
       {/* form section for later address collection ...import InputGroup */}
       {/* <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon1">{IconTaco}</InputGroup.Text>

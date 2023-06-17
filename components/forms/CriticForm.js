@@ -73,6 +73,19 @@ function CriticForm({ obj }) {
         />
       </FloatingLabel>
 
+      <FloatingLabel controlId="floatingInput2" label="Rating" className="mb-3">
+        <Form.Control
+          min={1}
+          max={6}
+          type="number"
+          placeholder="rate your taco"
+          name="rating"
+          defaultValue={formInput.rating}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
+
       {/* <FloatingLabel controlId="floatingSelect" label="Team">
         <Form.Select
           aria-label="Team"
