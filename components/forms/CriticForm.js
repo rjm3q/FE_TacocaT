@@ -36,7 +36,7 @@ function CriticForm({ obj }) {
     e.preventDefault();
     if (obj.firebaseKey) {
       updateCritic(formInput)
-        .then(() => router.push(`/critic/${obj.firebaseKey}`));
+        .then(() => router.push('/critics/criticIndex'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createCritic(payload).then(() => {

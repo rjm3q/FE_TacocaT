@@ -37,7 +37,7 @@ function FoodForm({ obj }) {
     e.preventDefault();
     if (obj.firebaseKey) {
       updateTaco(formInput)
-        .then(() => router.push(`/taco/${obj.firebaseKey}`));
+        .then(() => router.push('/tacos/tacoIndex'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createTaco(payload).then(() => {
