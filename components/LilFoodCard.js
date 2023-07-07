@@ -21,10 +21,10 @@ function LilFoodCard({ foodObj, onUpdate }) {
         <p className="card-text bold">{foodObj.type}</p>
         <p className="card-text bold">{foodObj.address}</p>
         <Link href={`/tacos/${foodObj.firebaseKey}`} passHref>
-          <Button variant="success" className="m-2">VIEW</Button>
+          <Button variant="info" className="m-2">VIEW</Button>
         </Link>
         <Link href={`/tacos/edit/${foodObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
+          <Button variant="dark">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisCard} className="m-2">
           DELETE

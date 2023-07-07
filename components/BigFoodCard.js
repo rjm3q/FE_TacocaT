@@ -22,10 +22,10 @@ function BigFoodCard({ foodObj, onUpdate }) {
         <p className="card-text bold">{foodObj.createdDate}</p>
         <p className="card-text bold">{foodObj.rating}</p>
         <Link href={`/critics/${foodObj.firebaseKey}`} passHref>
-          <Button variant="success" className="m-2">VIEW</Button>
+          <Button variant="info" className="m-2">VIEW</Button>
         </Link>
         <Link href={`/critics/edit/${foodObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
+          <Button variant="dark">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisCard} className="m-2">
           DELETE

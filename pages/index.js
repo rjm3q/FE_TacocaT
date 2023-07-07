@@ -24,7 +24,11 @@ function Home() {
       className="text-center d-flex flex-column justify-content-center align-content-center"
     >
 
-      <h1>Hello {user.displayName}! </h1>
+      <h1 style={{
+        fontFamily: 'Arial', fontSize: '48px', fontVariant: 'small-caps', color: 'red',
+      }}
+      >Hello {user.displayName}!
+      </h1>
       <Link href="/critics/newCritic" passHref>
         <Button>Create a Critic</Button>
       </Link>
