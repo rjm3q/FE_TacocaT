@@ -16,6 +16,7 @@ function BigFoodCard({ foodObj, onUpdate }) {
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
+        <Card.Img variant="top" src="https://media.istockphoto.com/id/1205934617/vector/taco-cute-fast-food-vector-character-set.jpg?s=1024x1024&w=is&k=20&c=f0qGFuwzi4KJW3uKsAyI3-aVnHLDS3qVIpHorcGsGsA=" />
         <Card.Title>{foodObj.criticName}</Card.Title>
         <p className="card-text bold">{foodObj.criticName}</p>
         <p className="card-text bold">{foodObj.desc}</p>
