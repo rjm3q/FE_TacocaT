@@ -15,6 +15,7 @@ const initialState = {
   long: '',
   ownerName: '',
   shopName: '',
+  image: '',
 };
 function FoodForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
@@ -100,6 +101,16 @@ function FoodForm({ obj }) {
           placeholder="Street food/ Dine in / Authentic"
           name="type"
           value={formInput.type}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
+      <FloatingLabel controlId="floatingInput1" label="dynamic-image" className="mb-3">
+        <Form.Control
+          type="url"
+          placeholder=""
+          name="image"
+          value={formInput.image}
           onChange={handleChange}
           required
         />
@@ -209,6 +220,7 @@ FoodForm.propTypes = {
     long: PropTypes.number,
     ownerName: PropTypes.string,
     shopName: PropTypes.string,
+    image: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
 };

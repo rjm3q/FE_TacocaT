@@ -14,9 +14,9 @@ function LilFoodCard({ foodObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
+    <Card className="lil-food-card" style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
-        <Card.Img variant="top" src="https://media.istockphoto.com/id/1205934617/vector/taco-cute-fast-food-vector-character-set.jpg?s=1024x1024&w=is&k=20&c=f0qGFuwzi4KJW3uKsAyI3-aVnHLDS3qVIpHorcGsGsA=" />
+        <Card.Img variant="top" src={foodObj.image} />
         <Card.Title>{foodObj.shopName}</Card.Title>
         <p className="card-text bold">{foodObj.ownerName}</p>
         <p className="card-text bold">{foodObj.type}</p>
@@ -27,7 +27,7 @@ function LilFoodCard({ foodObj, onUpdate }) {
         <Link href={`/tacos/edit/${foodObj.firebaseKey}`} passHref>
           <Button variant="dark">EDIT</Button>
         </Link>
-        <Button variant="danger" onClick={deleteThisCard} className="m-2">
+        <Button variant="outline-danger" onClick={deleteThisCard} className="m-2">
           DELETE
         </Button>
       </Card.Body>
@@ -45,6 +45,7 @@ LilFoodCard.propTypes = {
     ownerName: PropTypes.string,
     shopName: PropTypes.string,
     firebaseKey: PropTypes.string,
+    image: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };
