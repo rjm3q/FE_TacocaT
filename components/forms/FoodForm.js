@@ -15,6 +15,7 @@ const initialState = {
   long: '',
   ownerName: '',
   shopName: '',
+  image: '',
 };
 function FoodForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
@@ -71,7 +72,7 @@ function FoodForm({ obj }) {
         />
       </FloatingLabel>
       {/* need to make this a multi input area */}
-      <FloatingLabel controlId="floatingInput1" label="address-street" className="mb-3">
+      <FloatingLabel controlId="floatingInput1" label="Address/Location" className="mb-3">
         <Form.Control
           type="text"
           placeholder="Location of Taco Dispensary"
@@ -102,6 +103,15 @@ function FoodForm({ obj }) {
           value={formInput.type}
           onChange={handleChange}
           required
+        />
+      </FloatingLabel>
+      <FloatingLabel controlId="floatingInput1" label="Image URL" className="mb-3">
+        <Form.Control
+          type="url"
+          placeholder=""
+          name="image"
+          value={formInput.image}
+          onChange={handleChange}
         />
       </FloatingLabel>
       {/* dropdown form selctors for type and catgory */}
@@ -209,6 +219,7 @@ FoodForm.propTypes = {
     long: PropTypes.number,
     ownerName: PropTypes.string,
     shopName: PropTypes.string,
+    image: PropTypes.string,
     firebaseKey: PropTypes.string,
   }),
 };

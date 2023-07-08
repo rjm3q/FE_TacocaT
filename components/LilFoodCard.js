@@ -14,19 +14,20 @@ function LilFoodCard({ foodObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
+    <Card className="lil-food-card" style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
+        <Card.Img variant="top" src={foodObj.image} />
         <Card.Title>{foodObj.shopName}</Card.Title>
-        <p className="card-text bold">{foodObj.ownerName}</p>
-        <p className="card-text bold">{foodObj.type}</p>
-        <p className="card-text bold">{foodObj.address}</p>
+        <p className="card-text bold">Owner/Manager: {foodObj.ownerName}</p>
+        <p className="card-text bold">Type of Joint: {foodObj.type}</p>
+        <p className="card-text bold">Address: {foodObj.address}</p>
         <Link href={`/tacos/${foodObj.firebaseKey}`} passHref>
-          <Button variant="success" className="m-2">VIEW</Button>
+          <Button variant="info" className="m-2">VIEW</Button>
         </Link>
         <Link href={`/tacos/edit/${foodObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
+          <Button variant="dark">EDIT</Button>
         </Link>
-        <Button variant="danger" onClick={deleteThisCard} className="m-2">
+        <Button variant="outline-danger" onClick={deleteThisCard} className="m-2">
           DELETE
         </Button>
       </Card.Body>
@@ -44,6 +45,7 @@ LilFoodCard.propTypes = {
     ownerName: PropTypes.string,
     shopName: PropTypes.string,
     firebaseKey: PropTypes.string,
+    image: PropTypes.string,
   }).isRequired,
   onUpdate: PropTypes.func.isRequired,
 };

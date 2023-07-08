@@ -14,22 +14,29 @@ function BigFoodCard({ foodObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
+    <Card className="big-food-card" style={{ width: '100%', margin: '10px' }}>
       <Card.Body>
+        <Card.Img variant="top" />
         <Card.Title>{foodObj.criticName}</Card.Title>
         <p className="card-text bold">{foodObj.criticName}</p>
         <p className="card-text bold">{foodObj.desc}</p>
         <p className="card-text bold">{foodObj.createdDate}</p>
         <p className="card-text bold">{foodObj.rating}</p>
-        <Link href={`/critics/${foodObj.firebaseKey}`} passHref>
-          <Button variant="success" className="m-2">VIEW</Button>
-        </Link>
-        <Link href={`/critics/edit/${foodObj.firebaseKey}`} passHref>
-          <Button variant="info">EDIT</Button>
-        </Link>
-        <Button variant="danger" onClick={deleteThisCard} className="m-2">
-          DELETE
-        </Button>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-2rem' }}>
+          <Link href={`/critics/${foodObj.firebaseKey}`} passHref>
+            <Button variant="info" className="m-2">
+              VIEW
+            </Button>
+          </Link>
+          <Link href={`/critics/edit/${foodObj.firebaseKey}`} passHref>
+            <Button variant="dark" className="m-2">
+              EDIT
+            </Button>
+          </Link>
+          <Button variant="outline-danger" onClick={deleteThisCard} className="m-2">
+            DELETE
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   );

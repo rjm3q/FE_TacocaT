@@ -18,9 +18,8 @@ function Home() {
   }, []);
 
   return (
-    <div
-      className="text-center d-flex flex-column justify-content-center align-content-center"
-    >
+    <div className="text-center d-flex flex-column justify-content-center align-content-center">
+      <h1 style={{ color: 'white', marginTop: '.5rem' }}>Taco Joints</h1>
       <div className="d-flex flex-wrap">
         {cards.map((card) => (
           <LilFoodCard key={card.firebaseKey} foodObj={card} onUpdate={getTacos} />

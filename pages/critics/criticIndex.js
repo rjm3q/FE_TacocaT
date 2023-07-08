@@ -18,9 +18,8 @@ function Home() {
   }, []);
 
   return (
-    <div
-      className="d-flex flex-wrap justify-content-center align-content-center"
-    >
+    <div className="d-flex flex-wrap justify-content-center align-content-center">
+      <h1 style={{ color: 'white', marginTop: '5rem' }}>Reviews</h1>
       <div className="d-flex flex-wrap">
         {cards.map((card) => (
           <BigFoodCard key={card.firebaseKey} foodObj={card} onUpdate={getCritics} />

@@ -18,5 +18,25 @@ a {
 }
 
 body {
-  background-color: #88effd;
+  /* background-color: #fd9c88; */
+  background-image: url("https://img.freepik.com/free-vector/cafe-restaurant-terrace-night_107791-3270.jpg?w=1380&t=st=1688754628~exp=1688755228~hmac=20949ec7b3aae1e1fd3e096970cea5e24e57e6b68d88410abed159f89df0fee6");
+}
+
+ .lil-food-card {
+  background-color: rgb(30, 27, 128);
+  color: azure;
+ }
+
+ .big-food-card {
+  background-color: rgb(6, 3, 91);
+  color: azure;
+ }
+
+.home-page-btn {
+  width: 15rem;
+  margin: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 }
