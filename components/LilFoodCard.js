@@ -18,9 +18,9 @@ function LilFoodCard({ foodObj, onUpdate }) {
       <Card.Body>
         <Card.Img variant="top" src={foodObj.image} />
         <Card.Title>{foodObj.shopName}</Card.Title>
-        <p className="card-text bold">{foodObj.ownerName}</p>
-        <p className="card-text bold">{foodObj.type}</p>
-        <p className="card-text bold">{foodObj.address}</p>
+        <p className="card-text bold">Owner/Manager: {foodObj.ownerName}</p>
+        <p className="card-text bold">Type of Joint: {foodObj.type}</p>
+        <p className="card-text bold">Address: {foodObj.address}</p>
         <Link href={`/tacos/${foodObj.firebaseKey}`} passHref>
           <Button variant="info" className="m-2">VIEW</Button>
         </Link>

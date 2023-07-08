@@ -72,7 +72,7 @@ function FoodForm({ obj }) {
         />
       </FloatingLabel>
       {/* need to make this a multi input area */}
-      <FloatingLabel controlId="floatingInput1" label="address-street" className="mb-3">
+      <FloatingLabel controlId="floatingInput1" label="Address/Location" className="mb-3">
         <Form.Control
           type="text"
           placeholder="Location of Taco Dispensary"
@@ -105,14 +105,13 @@ function FoodForm({ obj }) {
           required
         />
       </FloatingLabel>
-      <FloatingLabel controlId="floatingInput1" label="dynamic-image" className="mb-3">
+      <FloatingLabel controlId="floatingInput1" label="Image URL" className="mb-3">
         <Form.Control
           type="url"
           placeholder=""
           name="image"
           value={formInput.image}
           onChange={handleChange}
-          required
         />
       </FloatingLabel>
       {/* dropdown form selctors for type and catgory */}

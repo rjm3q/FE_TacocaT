@@ -29,13 +29,17 @@ function Home() {
       >
         Hello {user.displayName}!
       </h1>
-      <div className="text-center d-flex flex-column justify-content-center align-items-center">
-        <Link href="/critics/newCritic" passHref>
-          <Button className="home-page-btn">Create a Critic</Button>
-        </Link>
-        <Link href="/tacos/newTaco" passHref>
-          <Button className="home-page-btn">Create a Taco</Button>
-        </Link>
+      <div className="d-flex flex-wrap justify-content-center">
+        <div className="mr-2">
+          <Link href="/critics/newCritic" passHref>
+            <Button className="home-page-btn">Create a Critic</Button>
+          </Link>
+        </div>
+        <div className="ml-2">
+          <Link href="/tacos/newTaco" passHref>
+            <Button className="home-page-btn">Create a Taco</Button>
+          </Link>
+        </div>
       </div>
       <div className="d-flex flex-wrap">
         {cards.map((lilTaco) => (

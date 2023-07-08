@@ -13,8 +13,8 @@ function Signin() {
         margin: '0 auto',
       }}
     >
-      <h1>Hungry?</h1>
-      <p>Click the button below to Taco!</p>
+      <h1 style={{ color: 'white' }}>Hungry?</h1>
+      <p style={{ color: 'white' }}>Click the button below to Taco!</p>
       <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
         Sign In
       </Button>
